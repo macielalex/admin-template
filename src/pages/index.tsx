@@ -39,7 +39,7 @@ export default function Home() {
   return (
     <Layout titulo="Página Inicial" subtitulo={"Construção do tamplate admin"}>
       
-      
+      <p>Página Inicial</p>
     </Layout>
   )
 }

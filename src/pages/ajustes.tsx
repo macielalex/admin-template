@@ -10,7 +10,7 @@ export default function Ajustes() {
   return (
     <Layout titulo="Ajustes" 
     subtitulo="Gestão de Ajustes">
-      
+      <p>Ajustes</p>
       
     </Layout>
   )

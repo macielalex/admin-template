@@ -1,4 +1,7 @@
 import Titulo from './Titulo'
+import BotaoAlternarTema from './BotaoAlternarTema'
+import useAppData from '../../data/hook/useAppData'
+
 
 
 interface CabecalhoProps{
@@ -8,9 +11,15 @@ interface CabecalhoProps{
 }
 
 export default function Cabecalho(props: CabecalhoProps){
+const {tema, alternarTema} = useAppData()
+
     return (
-        <div>
+        <div className={`flex`} >
+            
             <Titulo  titulo={props.titulo} subtitulo={props.subtitulo}/>
+            <div className={`hidden lg:flex flex-grow justify-end `}>
+                <BotaoAlternarTema tema={tema} alternarTema={alternarTema} />
+            </div>
         </div>
     )
 }
