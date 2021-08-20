@@ -3,11 +3,13 @@ import MenuItem from "./MenuItem"
 import Logo from "./Logo"
 import BotaoAlternarTema from "./BotaoAlternarTema"
 import useAppData from "../../data/hook/useAppData"
+import useAuth from "../../data/hook/useAuth"
 
 
 
 export default function MenuLateral() {
     const {tema , alternarTema} = useAppData()
+    const {logout} = useAuth()
 
     return (
 
@@ -31,14 +33,14 @@ export default function MenuLateral() {
                 <MenuItem url="/notificacoes" texto="Notificações" icone={IconeSino} />
             </ul>
 
-            <ul className={`sm:flex justify-center lg:hidden`} >
+            <ul className={`flex justify-center md:hidden lg:hidden`} >
                 <BotaoAlternarTema tema={tema} alternarTema={alternarTema}/>
             </ul>
             <ul>
 
                 <MenuItem 
                 texto="Sair" icone={IconeSair}
-                onClick={() => alert("Logout!!")}
+                onClick={logout}
                 className={`
                     text-red-600
                     hover:bg-gray-800 hover:text-white
