@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react'
+import Cliente from '../components/core/Cliente'
+import ContainerLayout from '../components/template/ContainerLayout'
 import Layout from '../components/template/Layout'
+import Tabela from '../components/template/Tabela'
 
 
 
@@ -36,10 +39,21 @@ export default function Home() {
   // }, [])
 
 
+  const clientes = [
+
+    new Cliente('1', 'Alex', 'alexmaciel.mail@gmail.com',''),
+    new Cliente('2', 'Maciel', 'alexmaciel@logtech.com.br',''),
+    new Cliente('3', 'Emerson', 'emersonlopes@logtech.com',''),
+    new Cliente('4', 'Suporte', 'suporte@logtech.com.br ',''),
+  ]
+
+
   return (
     <Layout titulo="Página Inicial" subtitulo={"Construção do tamplate admin"}>
-      
-      <p>Página Inicial</p>
+
+      <ContainerLayout titulo="Cadastro Simples">
+        <Tabela clientes={clientes}></Tabela>
+      </ContainerLayout>
     </Layout>
   )
 }
