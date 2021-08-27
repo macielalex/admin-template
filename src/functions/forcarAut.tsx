@@ -1,12 +1,12 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import route from 'next/router'
-import loading from '../../../public/images/loading4.gif'
-import useAppData from '../../data/hook/useAppData'
-import useAuth from '../../data/hook/useAuth'
+import loading from '../../public/images/loading4.gif'
+import useAppData from '../data/hook/useAppData'
+import useAuth from '../data/hook/useAuth'
 
 
-export default function ForcarAutenticacao(props) {
+export default function forcarAutenticacao(jsx) {
 
     const { usuario, carregando } = useAuth()
     const { tema } = useAppData()
@@ -30,7 +30,7 @@ export default function ForcarAutenticacao(props) {
                         }}
                     />
                 </Head>
-                {props.children}
+                {jsx}
             </>
         )
     }
@@ -57,11 +57,6 @@ export default function ForcarAutenticacao(props) {
     }
 
 
-    return (
-        <div className={` flex justify-center items-center h-screen`} >
-
-        </div>
-
-    )
+    
 
 }
