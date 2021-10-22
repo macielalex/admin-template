@@ -21,7 +21,7 @@ export default function Layout(props: LayoutProps) {
             <div className={` 
                 flex flex-col p-7
                 bg-gray-300 dark:bg-gray-800
-                w-full
+                w-full h-screen
             `}>
                 <Cabecalho titulo={props.titulo} subtitulo={props.subtitulo} />
                 <Conteudo>

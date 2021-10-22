@@ -14,9 +14,10 @@ export default function MenuLateral() {
     return (
 
         <aside className={`
-            flex flex-col
+            flex flex-col justify-items-start
             dark:bg-gray-900 dark:text-gray-200
             bg-gray-200 text-gray-700
+            
         `}>
             <div className={`
                 flex flex-col items-center justify-center
@@ -27,16 +28,18 @@ export default function MenuLateral() {
                 <Logo />
                 <p className={`text-xs p-1`}>WMS Expert</p>
             </div>
-            <ul className={`flex-grow`}>
+            <ul className={`flex-grow overflow-y-auto`}>
                 <MenuItem url="/" texto="Início" icone={IconeCasa} />
                 <MenuItem url="/ajustes" texto="Ajustes" icone={IconeAjustes} />
                 <MenuItem url="/notificacoes" texto="Notificações" icone={IconeSino} />
+                
+                
             </ul>
 
             <ul className={`flex justify-center md:hidden lg:hidden`} >
                 <BotaoAlternarTema tema={tema} alternarTema={alternarTema}/>
             </ul>
-            <ul>
+            <ul className={`flex-grow`}>
 
                 <MenuItem 
                 texto="Sair" icone={IconeSair}

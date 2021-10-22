@@ -10,8 +10,8 @@ export default function ContainerLayout(props: ContainerLayoutProps){
 
     return (
         <div className={` 
-        flex flex-col w-2/2  
-        bg-white text-gray-800 rounded-md`} >
+        flex flex-col w-2/2 
+        bg-white text-gray-800 rounded-md dark:bg-gray-500`} >
 
             <TituloContainer>{props.titulo}</TituloContainer>
             <div className={` p-6`}>
