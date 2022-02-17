@@ -118,13 +118,14 @@ export default function Home() {
               <div className={`flex justify-end`} >
                 <Botao
                   cor='blue'
-                  onClick={novoCliente}
-                  className={`mb-4`}> Novo Cliente
+                  onClick={()=>alert('Exportar')}
+                  className={`mb-4`}> Exportar
                 </Botao>
               </div>
               <Tabela clientes={clientes}
                 clienteSelecionado={clienteSelecionado}
                 clienteExcluido={clienteExcluido}
+                
               />
             </>
 

@@ -5,6 +5,7 @@ interface TabelaProps {
     clientes: Cliente[]
     clienteSelecionado?: (cliente: Cliente) => void
     clienteExcluido?: (cliente: Cliente) => void
+    
 
 }
 export default function Tabela(props: TabelaProps) {
@@ -22,6 +23,10 @@ export default function Tabela(props: TabelaProps) {
                 <th className="text-left p-4">Email</th>
                 <th className="text-left p-4">Status</th>
                 { exibirAcoes?  <th className="p-4">Ações</th> : false}
+                <button className={`bg-gradient-to-r from-gray-400 to-gray-700
+            text-white px-4 py-2 rounded-md md-4`}
+            onClick={()=>alert('tabela')}
+            >Teste</button>
             </tr>
         )
     }
