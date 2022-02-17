@@ -7,7 +7,7 @@ import ContainerLayout from '../components/template/ContainerLayout'
 import Formulario from '../components/template/Formulario'
 import Layout from '../components/template/Layout'
 import Tabela from '../components/template/Tabela'
-
+import { CSVLink  } from 'react-csv'
 
 
 // interface ResponseProps {
@@ -27,7 +27,19 @@ export default function Home() {
   const [clientes, setClientes] = useState<Cliente[]>([])
   const [visivel, setVisivel] = useState<'tabela' | 'formulario'>('tabela')
 
+ const headers = [
+   {label: "id", key:"id"},
+   {label: "nome", key:"nome"},
+   {label: "email", key:"email"},
+   {label: "active", key:"active"},
+ ];
 
+ const csvReport ={
+   filename: 'Clientes.csv',
+   headers: headers,
+   data: clientes
+
+ };
 
   useEffect(obterTodos, [])
 
@@ -119,8 +131,10 @@ export default function Home() {
                 <Botao
                   cor='blue'
                   onClick={()=>alert('Exportar')}
-                  className={`mb-4`}> Exportar
+                  className={`mb-4`}> 
+                  
                 </Botao>
+                <CSVLink {...csvReport} >Exportar</CSVLink>
               </div>
               <Tabela clientes={clientes}
                 clienteSelecionado={clienteSelecionado}
